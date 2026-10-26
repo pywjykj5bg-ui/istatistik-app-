@@ -1,3 +1,11 @@
+import subprocess
+import sys
+
+try:
+    import plotly.express as px
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly", "statsmodels"])
+    import plotly.express as px
 import streamlit as st
 import pandas as pd
 import numpy as np
